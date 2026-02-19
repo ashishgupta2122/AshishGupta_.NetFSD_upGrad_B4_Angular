@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Signal Simulator</title>
+</head>
+
+<body>
+    <h2>Traffic Signal Simulator</h2>
+
+    <script>
+        let signal = prompt("Enter the traffic signal color (red, yellow, green)");
+        signal = signal.toLowerCase();
+
+        switch (signal) {
+            case "red":
+                alert("Stop! The signal is red.");
+                break;
+            case "yellow":
+                alert("Caution! The signal is yellow.");
+                break;
+            case "green":
+                alert("Go! The signal is green.");
+                break;
+            default:
+                alert("Invalid signal color. Please enter red, yellow, or green.");
+        }
+    </script>
+</body>
+
+</html>
