@@ -1,0 +1,15 @@
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\bin\Debug\net10.0\L1Problem2.exe
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\bin\Debug\net10.0\L1Problem2.deps.json
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\bin\Debug\net10.0\L1Problem2.runtimeconfig.json
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\bin\Debug\net10.0\L1Problem2.dll
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\bin\Debug\net10.0\L1Problem2.pdb
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\obj\Debug\net10.0\L1Problem2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\obj\Debug\net10.0\L1Problem2.AssemblyInfoInputs.cache
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\obj\Debug\net10.0\L1Problem2.AssemblyInfo.cs
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\obj\Debug\net10.0\L1Problem2.csproj.CoreCompileInputs.cache
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\obj\Debug\net10.0\L1Problem2.sourcelink.json
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\obj\Debug\net10.0\L1Problem2.dll
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\obj\Debug\net10.0\refint\L1Problem2.dll
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\obj\Debug\net10.0\L1Problem2.pdb
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\obj\Debug\net10.0\L1Problem2.genruntimeconfig.cache
+D:\Tranning\DayActivity\Week5Day2\L1Problem2\obj\Debug\net10.0\ref\L1Problem2.dll

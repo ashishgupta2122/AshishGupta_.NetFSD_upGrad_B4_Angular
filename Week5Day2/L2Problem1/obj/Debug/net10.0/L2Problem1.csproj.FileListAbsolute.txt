@@ -1,0 +1,15 @@
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\bin\Debug\net10.0\L2Problem1.exe
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\bin\Debug\net10.0\L2Problem1.deps.json
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\bin\Debug\net10.0\L2Problem1.runtimeconfig.json
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\bin\Debug\net10.0\L2Problem1.dll
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\bin\Debug\net10.0\L2Problem1.pdb
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\obj\Debug\net10.0\L2Problem1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\obj\Debug\net10.0\L2Problem1.AssemblyInfoInputs.cache
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\obj\Debug\net10.0\L2Problem1.AssemblyInfo.cs
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\obj\Debug\net10.0\L2Problem1.csproj.CoreCompileInputs.cache
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\obj\Debug\net10.0\L2Problem1.sourcelink.json
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\obj\Debug\net10.0\L2Problem1.dll
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\obj\Debug\net10.0\refint\L2Problem1.dll
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\obj\Debug\net10.0\L2Problem1.pdb
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\obj\Debug\net10.0\L2Problem1.genruntimeconfig.cache
+D:\Tranning\DayActivity\Week5Day2\L2Problem1\obj\Debug\net10.0\ref\L2Problem1.dll
