@@ -1535,11 +1535,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Tranning\\DayActivity\\ProductApp\\..csproj",
+      "projectUniqueName": "D:\\Tranning\\DayActivity\\Week6Day2\\ProductApp\\..csproj",
       "projectName": ".",
-      "projectPath": "D:\\Tranning\\DayActivity\\ProductApp\\..csproj",
+      "projectPath": "D:\\Tranning\\DayActivity\\Week6Day2\\ProductApp\\..csproj",
       "packagesPath": "C:\\Users\\Ashish Gupta\\.nuget\\packages\\",
-      "outputPath": "D:\\Tranning\\DayActivity\\ProductApp\\obj\\",
+      "outputPath": "D:\\Tranning\\DayActivity\\Week6Day2\\ProductApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
