@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-lg p-4">
+                <h3 class="text-center mb-4">Submitted Details</h3>
+
+                <p><strong>Name:</strong> @ViewBag.Name</p>
+                <p><strong>Age:</strong> @ViewBag.Age</p>
+                <p><strong>Course:</strong> @ViewBag.Course</p>
+
+                <div class="text-center mt-3">
+                    <a href="/student/register" class="btn btn-secondary">Go Back</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
