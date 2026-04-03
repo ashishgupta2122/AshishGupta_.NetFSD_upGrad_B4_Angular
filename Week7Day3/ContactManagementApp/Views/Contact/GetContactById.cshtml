@@ -1,0 +1,14 @@
+@model ContactManagementApp.Models.ContactInfo
+
+<h2 class="text-center">Contact Details</h2>
+
+<div class="card p-4">
+    <p><b>ID:</b> @Model.ContactId</p>
+    <p><b>Name:</b> @Model.FirstName @Model.LastName</p>
+    <p><b>Company:</b> @Model.CompanyName</p>
+    <p><b>Email:</b> @Model.EmailId</p>
+    <p><b>Mobile:</b> @Model.MobileNo</p>
+    <p><b>Designation:</b> @Model.Designation</p>
+
+    <a href="/Contact/ShowContacts" class="btn btn-primary">Back</a>
+</div>

@@ -1,0 +1,9 @@
+D:\Tranning\DayActivity\Week7Day4\ContactManagementSystem\AppUILayer\obj\Debug\net10.0\rpswa.dswa.cache.json
+D:\Tranning\DayActivity\Week7Day4\ContactManagementSystem\AppUILayer\obj\Debug\net10.0\..GeneratedMSBuildEditorConfig.editorconfig
+D:\Tranning\DayActivity\Week7Day4\ContactManagementSystem\AppUILayer\obj\Debug\net10.0\..AssemblyInfoInputs.cache
+D:\Tranning\DayActivity\Week7Day4\ContactManagementSystem\AppUILayer\obj\Debug\net10.0\..AssemblyInfo.cs
+D:\Tranning\DayActivity\Week7Day4\ContactManagementSystem\AppUILayer\obj\Debug\net10.0\..csproj.CoreCompileInputs.cache
+D:\Tranning\DayActivity\Week7Day4\ContactManagementSystem\AppUILayer\obj\Debug\net10.0\..MvcApplicationPartsAssemblyInfo.cache
+D:\Tranning\DayActivity\Week7Day4\ContactManagementSystem\AppUILayer\obj\Debug\net10.0\..RazorAssemblyInfo.cache
+D:\Tranning\DayActivity\Week7Day4\ContactManagementSystem\AppUILayer\obj\Debug\net10.0\..RazorAssemblyInfo.cs
+D:\Tranning\DayActivity\Week7Day4\ContactManagementSystem\AppUILayer\obj\Debug\net10.0\..sourcelink.json
