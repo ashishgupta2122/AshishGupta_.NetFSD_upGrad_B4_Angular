@@ -1,0 +1,135 @@
+@model EMS.DAL.Models.SessionInfo
+
+@{
+    ViewData["Title"] = "Create Session";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+    }
+
+    .session-container {
+        min-height: 100vh;
+    }
+
+    .session-card {
+        border-radius: 20px;
+        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+    }
+
+    .form-control option {
+        color: black;
+    }
+
+    .form-control::placeholder {
+        color: #ddd;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.3);
+        color: white;
+    }
+
+    textarea.form-control {
+        min-height: 100px;
+    }
+
+    .btn-save {
+        border-radius: 10px;
+        background: linear-gradient(to right, #11998e, #38ef7d);
+        border: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-save:hover {
+        transform: scale(1.03);
+        opacity: 0.9;
+    }
+
+    label {
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    @@media (max-width: 768px) {
+        .session-card {
+            padding: 20px !important;
+        }
+    }
+</style>
+
+<div class="container d-flex justify-content-center align-items-center session-container">
+
+    <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+
+        <div class="card session-card shadow-lg p-4">
+
+            <h3 class="text-center mb-4 fw-bold">🎤 Create Session</h3>
+
+            <form asp-action="Create" method="post">
+
+                <div class="mb-3">
+                    <label>Session Title</label>
+                    <input asp-for="SessionTitle" class="form-control" placeholder="Enter session title" required />
+                </div>
+
+                <div class="mb-3">
+                    <label>Select Event</label>
+                    <select asp-for="EventId" asp-items="ViewBag.Events" class="form-control" required>
+                        <option value="">Select Event</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label>Select Speaker</label>
+                    <select asp-for="SpeakerId" asp-items="ViewBag.Speakers" class="form-control" required>
+                        <option value="">Select Speaker</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label>Session Start</label>
+                    <input asp-for="SessionStart" type="datetime-local" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label>Session End</label>
+                    <input asp-for="SessionEnd" type="datetime-local" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label>Session URL</label>
+                    <input asp-for="SessionUrl" class="form-control" placeholder="Enter meeting URL" />
+                </div>
+
+                <div class="mb-3">
+                    <label>Description</label>
+                    <textarea asp-for="Description" class="form-control" placeholder="Enter session details"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-save w-100 py-2">
+                    Save Session
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,165 @@
+@model IEnumerable<EMS.DAL.Models.SessionInfo>
+
+@{
+    ViewData["Title"] = "Sessions";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+    }
+
+    .session-card {
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        transition: 0.3s;
+        color: white;
+    }
+
+    .session-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .badge {
+        font-size: 12px;
+        padding: 6px 10px;
+        border-radius: 10px;
+    }
+
+    .btn-custom {
+        border-radius: 10px;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+
+    .btn-add {
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+        border: none;
+    }
+
+    .btn-join {
+        background: linear-gradient(to right, #11998e, #38ef7d);
+        border: none;
+        color: white;
+    }
+
+    .btn-delete {
+        background: linear-gradient(to right, #ff416c, #ff4b2b);
+        border: none;
+        color: white;
+    }
+
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .session-title {
+        font-weight: bold;
+    }
+
+    .session-desc {
+        font-size: 14px;
+        color: #ddd;
+    }
+
+    @@media (max-width: 768px) {
+        .top-bar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>
+
+<div class="container py-5">
+
+    <!-- HEADER -->
+    <div class="top-bar mb-4">
+        <h2 class="fw-bold">🎯 Sessions</h2>
+        <a href="/Session/Create" class="btn btn-custom btn-add px-4 py-2">
+            + Add Session
+        </a>
+    </div>
+
+    <!-- CARDS -->
+    <div class="row g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card session-card p-4 shadow-lg h-100">
+
+                    <!-- TITLE -->
+                    <h5 class="session-title mb-2">
+                        @(string.IsNullOrEmpty(item.SessionTitle) ? "No Title" : item.SessionTitle)
+                    </h5>
+
+                    <!-- DESCRIPTION -->
+                    <p class="session-desc flex-grow-1">
+                        @(string.IsNullOrEmpty(item.Description) ? "No Description" : item.Description)
+                    </p>
+
+                    <!-- EVENT -->
+                    <div class="mb-2">
+                        <span class="badge bg-secondary">
+                            📌 @(item.Event != null ? item.Event.EventName : "No Event")
+                        </span>
+                    </div>
+
+                    <!-- SPEAKER -->
+                    <div class="mb-2">
+                        <span class="badge bg-dark">
+                            🎤 @(item.Speaker != null ? item.Speaker.SpeakerName : "No Speaker")
+                        </span>
+                    </div>
+
+                    <!-- TIME -->
+                    <div class="mb-2">
+                        <span class="badge bg-info text-dark">
+                            ⏱ @item.SessionStart.ToString("dd MMM hh:mm tt")
+                        </span>
+                    </div>
+
+                    <div class="mb-3">
+                        <span class="badge bg-warning text-dark">
+                            ⏳ @item.SessionEnd.ToString("dd MMM hh:mm tt")
+                        </span>
+                    </div>
+
+                    <!-- ACTIONS -->
+                    <div class="mt-auto d-grid gap-2">
+
+                        @if (!string.IsNullOrEmpty(item.SessionUrl))
+                        {
+                            <a href="@item.SessionUrl" target="_blank" class="btn btn-custom btn-join btn-sm">
+                                🔗 Join Session
+                            </a>
+                        }
+
+                        <a href="/Session/Edit/@item.SessionId" class="btn btn-warning btn-sm">
+                            ✏ Edit
+                        </a>
+
+                        <a href="/Session/Delete/@item.SessionId" class="btn btn-custom btn-delete btn-sm">
+                            🗑 Delete
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

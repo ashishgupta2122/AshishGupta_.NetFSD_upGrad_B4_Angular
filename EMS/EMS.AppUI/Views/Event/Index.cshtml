@@ -1,0 +1,110 @@
+@model IEnumerable<EMS.DAL.Models.EventDetails>
+
+@{
+    ViewData["Title"] = "Events";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+    }
+
+    .event-card {
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        transition: 0.3s;
+        color: white;
+    }
+
+    .event-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-custom {
+        border-radius: 10px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+
+    .btn-add {
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+        border: none;
+    }
+
+    .btn-delete {
+        background: linear-gradient(to right, #ff416c, #ff4b2b);
+        border: none;
+    }
+
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .event-date {
+        font-size: 14px;
+        color: #ddd;
+    }
+
+    @@media (max-width: 768px) {
+        .top-bar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>
+
+<div class="container py-5">
+
+    <!-- TOP BAR -->
+    <div class="top-bar mb-4">
+        <h2 class="fw-bold">📅 Events</h2>
+        <a href="/Event/Create" class="btn btn-custom btn-add px-4 py-2">+ Add Event</a>
+    </div>
+
+    <div class="row g-4">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-12 col-sm-6 col-lg-4">
+                <div class="card event-card p-4 shadow-lg">
+
+                    <h5 class="fw-bold mb-2">@item.EventName</h5>
+
+                    <p class="mb-1"><strong>Category:</strong> @item.EventCategory</p>
+
+                    <p class="event-date">
+                        📅 @item.EventDate.ToShortDateString()
+                    </p>
+
+                    <div class="d-flex gap-2 mt-3">
+
+                        <a href="/Event/Edit/@item.EventId" class="btn btn-warning btn-sm w-50">
+                            Edit
+                        </a>
+
+                        <a href="/Event/Delete/@item.EventId" class="btn btn-custom btn-delete btn-sm w-50">
+                            Delete
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        }
+
+    </div>
+
+</div>

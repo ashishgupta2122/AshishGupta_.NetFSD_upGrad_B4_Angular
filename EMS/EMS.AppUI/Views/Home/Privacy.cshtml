@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+    }
+
+    .privacy-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 15px;
+    }
+
+    .privacy-card {
+        max-width: 900px;
+        width: 100%;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        padding: 30px;
+    }
+
+    .privacy-title {
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .privacy-section {
+        margin-bottom: 20px;
+    }
+
+    .privacy-section h5 {
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .privacy-section p {
+        color: #ddd;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    @@media (max-width: 768px) {
+        .privacy-card {
+            padding: 20px;
+        }
+    }
+</style>
+
+<div class="privacy-container">
+
+    <div class="privacy-card shadow-lg">
+
+        <h2 class="privacy-title text-center">🔒 Privacy Policy</h2>
+
+        <div class="privacy-section">
+            <h5>1. Information We Collect</h5>
+            <p>
+                We collect basic user information such as email, username, and activity data to provide
+                better services within the Event Management System.
+            </p>
+        </div>
+
+        <div class="privacy-section">
+            <h5>2. How We Use Your Data</h5>
+            <p>
+                Your data is used to manage events, sessions, and user authentication. We do not share
+                your personal data with third parties.
+            </p>
+        </div>
+
+        <div class="privacy-section">
+            <h5>3. Data Security</h5>
+            <p>
+                We implement industry-standard security measures to protect your data from unauthorized access.
+            </p>
+        </div>
+
+        <div class="privacy-section">
+            <h5>4. Cookies</h5>
+            <p>
+                Our system may use cookies to enhance user experience and session management.
+            </p>
+        </div>
+
+        <div class="privacy-section">
+            <h5>5. Contact Us</h5>
+            <p>
+                If you have any questions about this privacy policy, you can contact the admin.
+            </p>
+        </div>
+
+    </div>
+
+</div>

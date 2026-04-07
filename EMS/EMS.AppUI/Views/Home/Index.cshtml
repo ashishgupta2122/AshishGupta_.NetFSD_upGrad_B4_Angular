@@ -1,0 +1,128 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        color: white;
+    }
+
+    .hero-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        color: #ddd;
+        margin-top: 15px;
+    }
+
+    .btn-custom {
+        border-radius: 10px;
+        font-weight: 600;
+        padding: 10px 25px;
+        margin: 10px;
+        transition: 0.3s;
+    }
+
+    .btn-primary-custom {
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+        border: none;
+    }
+
+    .btn-outline-custom {
+        border: 2px solid white;
+        color: white;
+    }
+
+    .btn-custom:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+
+    .features {
+        margin-top: 50px;
+    }
+
+    .feature-box {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 20px;
+        backdrop-filter: blur(10px);
+        transition: 0.3s;
+    }
+
+    .feature-box:hover {
+        transform: translateY(-5px);
+    }
+
+    @@media (max-width: 768px) {
+        .hero-title {
+            font-size: 2rem;
+        }
+    }
+</style>
+
+<div class="hero-section">
+
+    <div class="hero-content">
+
+        <h1 class="hero-title">Event Management System</h1>
+
+        <p class="hero-subtitle">
+            Create, manage and organize your events, sessions, and speakers — all in one place.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="mt-4">
+            <a href="/Account/Login" class="btn btn-custom btn-primary-custom">Login</a>
+            <a href="/Account/Register" class="btn btn-custom btn-outline-custom">Register</a>
+        </div>
+
+        <!-- FEATURES -->
+        <div class="features row mt-5">
+
+            <div class="col-12 col-md-4 mb-3">
+                <div class="feature-box">
+                    <h5>📅 Events</h5>
+                    <p>Create and manage events easily</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 mb-3">
+                <div class="feature-box">
+                    <h5>🎤 Sessions</h5>
+                    <p>Organize sessions efficiently</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 mb-3">
+                <div class="feature-box">
+                    <h5>🧑‍🏫 Speakers</h5>
+                    <p>Manage speaker profiles</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

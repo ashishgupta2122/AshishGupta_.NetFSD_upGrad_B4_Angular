@@ -1,0 +1,103 @@
+<div class="container-fluid dashboard-container py-5">
+
+    <style>
+            body {
+                background: linear-gradient(135deg, #1e3c72, #2a5298);
+                font-family: 'Segoe UI', sans-serif;
+                color: white;
+            }
+
+            .dashboard-title {
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+
+            .dashboard-card {
+                border-radius: 20px;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(12px);
+                transition: 0.3s;
+                color: white;
+            }
+
+            .dashboard-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            .dashboard-icon {
+                font-size: 40px;
+                margin-bottom: 10px;
+            }
+
+            .btn-custom {
+                border-radius: 10px;
+                font-weight: 600;
+                transition: 0.3s;
+            }
+
+            .btn-custom:hover {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
+
+            .btn-events {
+                background: linear-gradient(to right, #00c6ff, #0072ff);
+                border: none;
+            }
+
+            .btn-sessions {
+                background: linear-gradient(to right, #f7971e, #ffd200);
+                border: none;
+                color: black;
+            }
+
+            .btn-speakers {
+                background: linear-gradient(to right, #11998e, #38ef7d);
+                border: none;
+            }
+
+            @@media (max-width: 768px) {
+                .dashboard-card {
+                    padding: 20px !important;
+                }
+            }
+    </style>
+
+    <h2 class="text-center mb-5 dashboard-title">📊 Admin Dashboard</h2>
+
+    <div class="row g-4 justify-content-center">
+
+        <!-- EVENTS -->
+        <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+            <div class="card dashboard-card p-4 text-center shadow-lg">
+                <div class="dashboard-icon">📅</div>
+                <h5 class="fw-bold">Events</h5>
+                <p class="small text-light">Create and manage all events</p>
+                <a href="/Event" class="btn btn-custom btn-events mt-3 w-100">Manage</a>
+            </div>
+        </div>
+
+        <!-- SESSIONS -->
+        <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+            <div class="card dashboard-card p-4 text-center shadow-lg">
+                <div class="dashboard-icon">🎤</div>
+                <h5 class="fw-bold">Sessions</h5>
+                <p class="small text-light">Handle event sessions easily</p>
+                <a href="/Session" class="btn btn-custom btn-sessions mt-3 w-100">Manage</a>
+            </div>
+        </div>
+
+        <!-- SPEAKERS -->
+        <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+            <div class="card dashboard-card p-4 text-center shadow-lg">
+                <div class="dashboard-icon">🧑‍🏫</div>
+                <h5 class="fw-bold">Speakers</h5>
+                <p class="small text-light">Manage speaker profiles</p>
+                <a href="/Speaker" class="btn btn-custom btn-speakers mt-3 w-100">Manage</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
