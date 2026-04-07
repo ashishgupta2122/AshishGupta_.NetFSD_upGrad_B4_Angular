@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Day 3 - CSS Hands On</title>
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>DAY 3 Hands-On Activities</h1>
+    <p>This page demonstrates external CSS, selectors, and the box model.</p>
+
+
+    <section class="info-section">
+        <h2>About CSS Styling</h2>
+        <p>
+            CSS is used to style and layout web pages. It controls colors, fonts,
+            spacing, borders, and responsiveness.
+        </p>
+    </section>
+
+
+    <div class="box-model">
+        This div demonstrates margin, padding, and border.
+    </div>
+
+
+    <h2>Course Enrollment Form</h2>
+
+    <form class="enroll-form">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name">
+
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email">
+
+        <label>Course</label>
+        <input list="courses" placeholder="Select course">
+        <datalist id="courses">
+            <option value="HTML">
+            <option value="CSS">
+            <option value="JavaScript">
+            <option value="React">
+        </datalist>
+
+        <label>Skill Level</label>
+        <meter min="0" max="10" value="6"></meter>
+
+        <label>Progress</label>
+        <progress value="60" max="100"></progress>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>

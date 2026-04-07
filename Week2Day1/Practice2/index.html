@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+
+        <input type="text" id="name" placeholder="Enter Name" onchange="validateName()">
+        <p id="nameMsg"></p>
+
+        <input type="text" id="email" placeholder="Enter Email" onchange="validateEmail()">
+        <p id="emailMsg"></p>
+
+        <input type="number" id="age" placeholder="Enter Age" onchange="validateAge()">
+        <p id="ageMsg"></p>
+
+        <button>Submit</button>
+        <p id="finalMsg"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

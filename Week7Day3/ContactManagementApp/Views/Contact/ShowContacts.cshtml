@@ -1,0 +1,34 @@
+@model List<ContactManagementApp.Models.ContactInfo>
+
+<h2 class="text-center">Contact List</h2>
+
+<a href="/Contact/AddContact" class="btn btn-primary mb-3">Add Contact</a>
+
+<table class="table table-striped table-bordered">
+    <thead class="table=dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Compnay</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.ContactId</td>
+                <td>@c.FirstName @c.LastName</td>
+                <td>@c.CompanyName</td>
+                <td>@c.EmailId</td>
+                <td>@c.MobileNo</td>
+                <td>
+                    <a href="/Contact/GetContactById/@c.ContactId" class="btn btn-info btn-sm">View</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
