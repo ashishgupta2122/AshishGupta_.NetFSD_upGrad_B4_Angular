@@ -1,0 +1,26 @@
+@model DataAccessLayer.Models.ContactInfo
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Contact Details</h2>
+
+    <div class="card p-4 shadow">
+        <div class="row">
+            <div class="col-md-6"><strong>Name:</strong> @Model.FirstName @Model.LastName</div>
+            <div class="col-md-6"><strong>Email:</strong> @Model.EmailId</div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-6"><strong>Mobile:</strong> @Model.MobileNo</div>
+            <div class="col-md-6"><strong>Designation:</strong> @Model.Designation</div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-6"><strong>Company:</strong> @Model.CompanyName</div>
+            <div class="col-md-6"><strong>Department:</strong> @Model.DepartmentName</div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="/contact" class="btn btn-secondary">Back</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+@model DataAccessLayer.Models.ContactInfo
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Add Contact</h2>
+
+    <form method="post" action="/contact/add">
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="row g-3">
+
+            <div class="col-md-6">
+                <label>First Name</label>
+                <input asp-for="FirstName" class="form-control" required />
+            </div>
+
+            <div class="col-md-6">
+                <label>Last Name</label>
+                <input asp-for="LastName" class="form-control" required />
+            </div>
+
+            <div class="col-md-6">
+                <label>Email</label>
+                <input asp-for="EmailId" type="email" class="form-control" required />
+            </div>
+
+            <div class="col-md-6">
+                <label>Mobile</label>
+                <input asp-for="MobileNo" class="form-control" required />
+            </div>
+
+            <div class="col-md-6">
+                <label>Designation</label>
+                <input asp-for="Designation" class="form-control" />
+            </div>
+
+            <div class="col-md-6">
+                <label>Company</label>
+                <select asp-for="CompanyId" asp-items="ViewBag.CompanyList" class="form-control">
+                    <option value="">-- Select Company --</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label>Department</label>
+                <select asp-for="DepartmentId" asp-items="ViewBag.DepartmentList" class="form-control">
+                    <option value="">-- Select Department --</option>
+                </select>
+            </div>
+
+            <div class="col-12 text-center mt-3">
+                <button type="submit" class="btn btn-success">Save</button>
+                <a href="/contact" class="btn btn-secondary">Cancel</a>
+            </div>
+
+        </div>
+    </form>
+</div>
