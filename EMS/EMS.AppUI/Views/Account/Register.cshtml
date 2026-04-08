@@ -4,121 +4,56 @@
     ViewData["Title"] = "Register";
 }
 
-<style>
-    body {
-        background: linear-gradient(135deg, #1e3c72, #2a5298);
-        font-family: 'Segoe UI', sans-serif;
-    }
-
-    .register-container {
-        min-height: 100vh;
-    }
-
-    .register-card {
-        border-radius: 20px;
-        backdrop-filter: blur(12px);
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-    }
-
-    .form-control {
-        border-radius: 10px;
-        padding: 10px;
-        background: rgba(255, 255, 255, 0.2);
-        border: none;
-        color: white;
-    }
-
-    .form-control::placeholder {
-        color: #ddd;
-    }
-
-    .form-control:focus {
-        box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-        background: rgba(255, 255, 255, 0.3);
-        color: white;
-    }
-
-    .btn-register {
-        border-radius: 10px;
-        background: linear-gradient(to right, #11998e, #38ef7d);
-        border: none;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-
-    .btn-register:hover {
-        transform: scale(1.03);
-        opacity: 0.9;
-    }
-
-    .login-link a {
-        color: #00c6ff;
-        text-decoration: none;
-    }
-
-    .login-link a:hover {
-        text-decoration: underline;
-    }
-
-    hr {
-        border-color: rgba(255, 255, 255, 0.3);
-    }
-
-    @@media (max-width: 768px) {
-        .register-card {
-            padding: 20px !important;
-        }
-    }
-</style>
-
-<div class="container d-flex justify-content-center align-items-center register-container">
+<div class="container d-flex justify-content-center align-items-center"
+     style="min-height:100vh; background:linear-gradient(135deg,#1e3c72,#2a5298);">
 
     <div class="col-11 col-sm-9 col-md-6 col-lg-4">
 
-        <div class="card register-card shadow-lg p-4">
+        <div class="card p-4 shadow-lg" style="border-radius:20px; background:rgba(255,255,255,0.1); color:white;">
 
-            <h3 class="text-center mb-4 fw-bold">📝 Create Account</h3>
+            <h3 class="text-center mb-4">📝 Create Account</h3>
 
-            <form asp-action="Register" asp-controller="Account" method="post">
+            <form asp-action="Register" method="post">
+
+                <!--  ALL VALIDATION ERRORS -->
+                <div asp-validation-summary="All" class="text-danger text-center mb-2"></div>
+
+                <!--  HIDDEN ROLE FIELD (IMPORTANT FIX) -->
+                <input type="hidden" asp-for="Role" value="Participant" />
 
                 <div class="mb-3">
-                    <label class="form-label fw-semibold">Email</label>
-                    <input asp-for="EmailId" class="form-control" placeholder="Enter email" required />
+                    <input asp-for="EmailId" class="form-control" placeholder="Email" />
+                    <span asp-validation-for="EmailId" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label fw-semibold">Username</label>
-                    <input asp-for="UserName" class="form-control" placeholder="Enter username" required />
+                    <input asp-for="UserName" class="form-control" placeholder="Username" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label fw-semibold">Password</label>
-                    <input asp-for="Password" type="password" class="form-control" placeholder="Enter password"
-                           required />
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
 
-                <button type="submit" class="btn btn-register w-100 py-2">
-                    Register
-                </button>
+                <button type="submit" class="btn btn-success w-100">Register</button>
 
-                <p class="text-danger text-center mt-3">
-                    @ViewBag.Error
-                </p>
+                <p class="text-danger text-center mt-2">@ViewBag.Error</p>
 
             </form>
 
-            <hr />
-
-            <p class="text-center mt-2 mb-0 login-link">
+            <p class="text-center mt-3">
                 Already have an account?
-                <a href="/Account/Login" class="fw-bold">
-                    Login
-                </a>
+                <a asp-action="Login" asp-controller="Account">Login</a>
             </p>
 
         </div>
 
     </div>
-
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

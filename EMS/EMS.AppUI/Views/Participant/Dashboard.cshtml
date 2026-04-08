@@ -1,0 +1,113 @@
+@{
+    ViewData["Title"] = "Participant Dashboard";
+}
+
+<div class="container-fluid dashboard-container py-5">
+
+    <h2 class="text-center mb-5 dashboard-title">👤 Participant Dashboard</h2>
+
+    <div class="row g-4 justify-content-center">
+
+        <!-- EXPLORE EVENTS -->
+        <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+            <div class="card dashboard-card p-4 text-center shadow-lg">
+                <div class="dashboard-icon">📅</div>
+                <h5 class="fw-bold">Explore Events</h5>
+                <p class="small text-light">Browse all available events</p>
+                <a asp-controller="Event" asp-action="Index" class="btn btn-custom btn-events mt-3 w-100">
+                    Explore
+                </a>
+            </div>
+        </div>
+
+        <!-- REGISTERED EVENTS -->
+        <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+            <div class="card dashboard-card p-4 text-center shadow-lg">
+                <div class="dashboard-icon">📝</div>
+                <h5 class="fw-bold">My Events</h5>
+                <p class="small text-light">View your registered events</p>
+                <a asp-controller="Participant" asp-action="MyEvents" class="btn btn-custom btn-my-events mt-3 w-100">
+                    View
+                </a>
+            </div>
+        </div>
+
+        <!-- SESSIONS -->
+        <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+            <div class="card dashboard-card p-4 text-center shadow-lg">
+                <div class="dashboard-icon">🎤</div>
+                <h5 class="fw-bold">Sessions</h5>
+                <p class="small text-light">View sessions of your events</p>
+                <a asp-controller="Participant" asp-action="MySessions" class="btn btn-custom btn-sessions mt-3 w-100">
+                    View
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+    body {
+        background: linear-gradient(135deg, #141e30, #243b55);
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+    }
+
+    .dashboard-title {
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .dashboard-card {
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        transition: 0.3s;
+        color: white;
+    }
+
+    .dashboard-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .dashboard-icon {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .btn-custom {
+        border-radius: 10px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+
+    .btn-events {
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+        border: none;
+    }
+
+    .btn-my-events {
+        background: linear-gradient(to right, #ff512f, #dd2476);
+        border: none;
+    }
+
+    .btn-sessions {
+        background: linear-gradient(to right, #f7971e, #ffd200);
+        border: none;
+        color: black;
+    }
+
+    @@media (max-width: 768px) {
+        .dashboard-card {
+            padding: 20px !important;
+        }
+    }
+</style>

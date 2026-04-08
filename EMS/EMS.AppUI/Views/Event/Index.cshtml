@@ -14,16 +14,33 @@
     .event-card {
         border-radius: 20px;
         background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(12px);
+        backdrop-filter: blur(15px);
         transition: 0.3s;
         color: white;
+        border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .event-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     }
 
+    /*  TEXT FIX */
+    .event-card p {
+        color: white;
+        margin-bottom: 5px;
+    }
+
+    .event-card strong {
+        color: #ffffff;
+    }
+
+    .event-date {
+        font-size: 14px;
+        color: #ffffff;
+    }
+
+    /*  BUTTONS */
     .btn-custom {
         border-radius: 10px;
         font-weight: 600;
@@ -45,17 +62,18 @@
         border: none;
     }
 
+    .btn-success {
+        background: linear-gradient(to right, #11998e, #38ef7d);
+        border: none;
+        color: white;
+    }
+
     .top-bar {
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         gap: 10px;
-    }
-
-    .event-date {
-        font-size: 14px;
-        color: #ddd;
     }
 
     @@media (max-width: 768px) {
@@ -68,36 +86,64 @@
 
 <div class="container py-5">
 
-    <!-- TOP BAR -->
+    <!--  HEADER -->
     <div class="top-bar mb-4">
         <h2 class="fw-bold">📅 Events</h2>
-        <a href="/Event/Create" class="btn btn-custom btn-add px-4 py-2">+ Add Event</a>
+
+        @if (Context.Session.GetString("Role") == "Admin")
+        {
+            <a href="/Admin/CreateEvent" class="btn btn-custom btn-add px-4 py-2">
+                + Add Event
+            </a>
+        }
     </div>
 
+    <!--  CARDS -->
     <div class="row g-4">
 
         @foreach (var item in Model)
         {
             <div class="col-12 col-sm-6 col-lg-4">
-                <div class="card event-card p-4 shadow-lg">
+                <div class="card event-card p-4 shadow-lg h-100">
 
+                    <!-- TITLE -->
                     <h5 class="fw-bold mb-2">@item.EventName</h5>
 
-                    <p class="mb-1"><strong>Category:</strong> @item.EventCategory</p>
+                    <!-- CATEGORY -->
+                    <p><strong>Category:</strong> @item.EventCategory</p>
 
+                    <!-- DATE -->
                     <p class="event-date">
                         📅 @item.EventDate.ToShortDateString()
                     </p>
 
-                    <div class="d-flex gap-2 mt-3">
+                    <!-- DESCRIPTION (OPTIONAL) -->
+                    @if (!string.IsNullOrEmpty(item.Description))
+                    {
+                        <p class="small mt-2">@item.Description</p>
+                    }
 
-                        <a href="/Event/Edit/@item.EventId" class="btn btn-warning btn-sm w-50">
-                            Edit
-                        </a>
+                    <!-- ACTIONS -->
+                    <div class="mt-3">
 
-                        <a href="/Event/Delete/@item.EventId" class="btn btn-custom btn-delete btn-sm w-50">
-                            Delete
-                        </a>
+                        @if (Context.Session.GetString("Role") == "Admin")
+                        {
+                            <div class="d-flex gap-2">
+                                <a href="/Admin/EditEvent/@item.EventId" class="btn btn-warning btn-sm w-50">
+                                    ✏ Edit
+                                </a>
+
+                                <a href="/Admin/DeleteEvent/@item.EventId" class="btn btn-delete btn-sm w-50">
+                                    🗑 Delete
+                                </a>
+                            </div>
+                        }
+                        else if (Context.Session.GetString("Role") == "Participant")
+                        {
+                            <a href="/Home/EventDetails/@item.EventId" class="btn btn-success w-100">
+                                🔍 View Details
+                            </a>
+                        }
 
                     </div>
 

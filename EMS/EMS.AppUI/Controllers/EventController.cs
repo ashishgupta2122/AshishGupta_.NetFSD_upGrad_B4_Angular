@@ -13,7 +13,7 @@ namespace EMS.AppUI.Controllers
             _repo = repo;
         }
 
-        // 🔥 LOGIN CHECK
+        //  LOGIN CHECK
         private bool IsUserLoggedIn()
         {
             return !string.IsNullOrEmpty(HttpContext.Session.GetString("UserEmail"));

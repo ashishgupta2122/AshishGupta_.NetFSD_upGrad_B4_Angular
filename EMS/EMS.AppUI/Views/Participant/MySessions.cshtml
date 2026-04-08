@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "My Sessions";
+}
+
+<div class="container py-5">
+
+    <h2 class="text-center mb-4 text-success">🎤 My Sessions</h2>
+
+    <div class="row g-4">
+
+        <!-- SAMPLE SESSION CARD -->
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="card session-card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">AI & Future</h5>
+                    <p class="text-muted">Speaker: John Doe</p>
+                    <p>Time: 10:00 AM - 11:00 AM</p>
+                    <span class="badge bg-info text-dark">Upcoming</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+    body {
+        background: #eef2f7;
+    }
+
+    .session-card {
+        border-radius: 15px;
+        transition: 0.3s;
+    }
+
+    .session-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+</style>

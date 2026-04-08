@@ -1,0 +1,109 @@
+@model List<EMS.DAL.Models.EventDetails>
+
+@{
+    ViewData["Title"] = "My Events";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+    }
+
+    .event-card {
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        transition: 0.3s;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: white;
+    }
+
+    .event-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .event-title {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .event-text {
+        font-size: 14px;
+        color: #eee;
+    }
+
+    .badge-custom {
+        background: linear-gradient(to right, #11998e, #38ef7d);
+        border-radius: 10px;
+        padding: 6px 12px;
+        font-size: 12px;
+        color: white;
+    }
+
+    .empty-box {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+    }
+
+    @@media (max-width: 768px) {
+        .event-card {
+            padding: 20px !important;
+        }
+    }
+</style>
+
+<div class="container py-5">
+
+    <!-- HEADER -->
+    <h2 class="text-center mb-5 fw-bold">📅 My Registered Events</h2>
+
+    <div class="row g-4">
+
+        @if (Model != null && Model.Count > 0)
+        {
+            @foreach (var item in Model)
+            {
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card event-card p-4 shadow-lg h-100">
+
+                        <!-- TITLE -->
+                        <h5 class="event-title mb-2">
+                            @item.EventName
+                        </h5>
+
+                        <!-- CATEGORY -->
+                        <p class="event-text mb-1">
+                            📌 Category: @item.EventCategory
+                        </p>
+
+                        <!-- DATE -->
+                        <p class="event-text mb-3">
+                            📅 @item.EventDate.ToString("dd MMM yyyy")
+                        </p>
+
+                        <!-- STATUS -->
+                        <span class="badge-custom">
+                            ✅ Registered
+                        </span>
+
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-12 text-center">
+                <div class="empty-box">
+                    <h5>No events registered yet</h5>
+                </div>
+            </div>
+        }
+
+    </div>
+
+</div>

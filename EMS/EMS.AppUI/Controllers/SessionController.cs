@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using EMS.DAL.Models;
 using EMS.DAL.Repository;
 using System.Linq;
+using System;
 
 namespace EMS.AppUI.Controllers
 {
@@ -22,13 +22,13 @@ namespace EMS.AppUI.Controllers
             _speakerRepo = speakerRepo;
         }
 
-        //  SESSION CHECK
+        //  LOGIN CHECK
         private bool IsLoggedIn()
         {
             return HttpContext.Session.GetString("UserEmail") != null;
         }
 
-        //  INDEX
+        // ================= INDEX =================
         public IActionResult Index()
         {
             if (!IsLoggedIn())
@@ -38,7 +38,7 @@ namespace EMS.AppUI.Controllers
             var events = _eventRepo.GetAll()?.ToList() ?? new List<EventDetails>();
             var speakers = _speakerRepo.GetAll()?.ToList() ?? new List<SpeakersDetails>();
 
-            //  MANUAL JOIN (IMPORTANT)
+            //  Manual join
             foreach (var s in sessions)
             {
                 s.Event = events.FirstOrDefault(e => e.EventId == s.EventId);
@@ -48,7 +48,7 @@ namespace EMS.AppUI.Controllers
             return View(sessions);
         }
 
-        //  CREATE GET
+        // ================= CREATE GET =================
         public IActionResult Create()
         {
             if (!IsLoggedIn())
@@ -58,16 +58,14 @@ namespace EMS.AppUI.Controllers
             return View();
         }
 
-        //  CREATE POST (FINAL FIXED)
+        // ================= CREATE POST =================
         [HttpPost]
         public IActionResult Create(SessionInfo model)
         {
             if (!IsLoggedIn())
                 return RedirectToAction("Login", "Account");
 
-            Console.WriteLine("CREATE HIT");
-
-            //  VALIDATION FIX
+            //  Validation
             if (model.EventId == Guid.Empty)
                 ModelState.AddModelError("EventId", "Event is required");
 
@@ -79,7 +77,6 @@ namespace EMS.AppUI.Controllers
 
             if (!ModelState.IsValid)
             {
-                Console.WriteLine("MODEL INVALID");
                 LoadDropdowns();
                 return View(model);
             }
@@ -89,12 +86,10 @@ namespace EMS.AppUI.Controllers
             _repo.Insert(model);
             _repo.Save();
 
-            Console.WriteLine("SESSION SAVED");
-
             return RedirectToAction("Index");
         }
 
-        //  DELETE
+        // ================= DELETE =================
         public IActionResult Delete(Guid id)
         {
             if (!IsLoggedIn())
@@ -109,18 +104,12 @@ namespace EMS.AppUI.Controllers
             return RedirectToAction("Index");
         }
 
-        //  COMMON METHOD (BEST PRACTICE)
+        // ================= DROPDOWN FIX =================
         private void LoadDropdowns()
         {
-            ViewBag.Events = new SelectList(
-                _eventRepo.GetAll()?.ToList() ?? new List<EventDetails>(),
-                "EventId", "EventName"
-            );
-
-            ViewBag.Speakers = new SelectList(
-                _speakerRepo.GetAll()?.ToList() ?? new List<SpeakersDetails>(),
-                "SpeakerId", "SpeakerName"
-            );
+            // 🔥 FIX: SelectList hata diya
+            ViewBag.Events = _eventRepo.GetAll()?.ToList() ?? new List<EventDetails>();
+            ViewBag.Speakers = _speakerRepo.GetAll()?.ToList() ?? new List<SpeakersDetails>();
         }
     }
 }

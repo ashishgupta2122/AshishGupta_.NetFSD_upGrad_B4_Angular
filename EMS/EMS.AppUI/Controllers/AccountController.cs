@@ -1,99 +1,95 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using EMS.DAL.Data;
 using EMS.DAL.Models;
-using EMS.DAL.Repository;
+using EMS.AppUI.Models;
 using System.Linq;
 
-namespace EMS.AppUI.Controllers
+public class AccountController : Controller
 {
-    public class AccountController : Controller
+    private readonly EMSDbContext _context;
+
+    public AccountController(EMSDbContext context)
     {
-        private readonly IGenericRepository<UserInfo> _repo;
+        _context = context;
+    }
 
-        public AccountController(IGenericRepository<UserInfo> repo)
+    // LOGIN GET
+    public IActionResult Login()
+    {
+        return View();
+    }
+
+    //  LOGIN POST
+    [HttpPost]
+    public IActionResult Login(LoginModel model)
+    {
+        if (!ModelState.IsValid)
+            return View(model);
+
+        var user = _context.UserInfos
+            .FirstOrDefault(u => u.EmailId == model.Email && u.Password == model.Password);
+
+        if (user != null)
         {
-            _repo = repo;
+            HttpContext.Session.SetString("UserEmail", user.EmailId);
+            HttpContext.Session.SetString("Role", user.Role);
+
+            if (user.Role == "Admin")
+                return RedirectToAction("Dashboard", "Admin");
+            else
+                return RedirectToAction("Dashboard", "Participant");
         }
 
-        //  LOGIN GET
-        public IActionResult Login()
+        ViewBag.Error = "Invalid Login";
+        return View();
+    }
+
+    //  REGISTER GET
+    public IActionResult Register()
+    {
+        return View();
+    }
+
+    //  REGISTER POST (FULL FIXED )
+
+    [HttpPost]
+    public IActionResult Register(UserInfo model)
+    {
+        //  DEBUG
+        Console.WriteLine("Register Hit");
+
+        if (!ModelState.IsValid)
         {
-            return View();
-        }
-
-        //  LOGIN POST
-        [HttpPost]
-        public IActionResult Login(UserInfo model)
-        {
-            if (string.IsNullOrEmpty(model.EmailId) || string.IsNullOrEmpty(model.Password))
-            {
-                ViewBag.Error = "Enter Email and Password";
-                return View(model);
-            }
-
-            var user = _repo.GetAll()
-                .FirstOrDefault(u =>
-                    u.EmailId.ToLower().Trim() == model.EmailId.ToLower().Trim() &&
-                    u.Password.Trim() == model.Password.Trim());
-
-            if (user != null)
-            {
-                HttpContext.Session.SetString("UserEmail", user.EmailId);
-                HttpContext.Session.SetString("UserRole", user.Role);
-
-                if (user.Role == "Admin")
-                    return RedirectToAction("Dashboard", "Admin");
-
-                return RedirectToAction("Index", "Home");
-            }
-
-            ViewBag.Error = "Invalid Email or Password";
+            Console.WriteLine("Model Invalid");
             return View(model);
         }
 
-        //  REGISTER GET
-        public IActionResult Register()
+        var existingUser = _context.UserInfos
+            .FirstOrDefault(u => u.EmailId == model.EmailId);
+
+        if (existingUser != null)
         {
-            return View();
+            ViewBag.Error = "Email already exists";
+            return View(model);
         }
 
-        //  REGISTER POST
-        [HttpPost]
-        public IActionResult Register(UserInfo model)
-        {
-            if (string.IsNullOrEmpty(model.EmailId) ||
-                string.IsNullOrEmpty(model.UserName) ||
-                string.IsNullOrEmpty(model.Password))
-            {
-                ViewBag.Error = "All fields are required";
-                return View(model);
-            }
+        model.Role = "Participant";
 
-            model.EmailId = model.EmailId.Trim();
-            model.UserName = model.UserName.Trim();
-            model.Password = model.Password.Trim();
+        _context.UserInfos.Add(model);
+        _context.SaveChanges();
 
-            var exists = _repo.GetAll()
-                .Any(u => u.EmailId.ToLower() == model.EmailId.ToLower());
+        Console.WriteLine("User Saved");
 
-            if (exists)
-            {
-                ViewBag.Error = "Email already exists";
-                return View(model);
-            }
+        HttpContext.Session.SetString("UserEmail", model.EmailId);
+        HttpContext.Session.SetString("Role", model.Role);
 
-            model.Role = "Participant";
-
-            _repo.Insert(model);
-            _repo.Save();
-
-            return RedirectToAction("Login");
-        }
-
-        //  LOGOUT
-        public IActionResult Logout()
-        {
-            HttpContext.Session.Clear();
-            return RedirectToAction("Login");
-        }
+        return RedirectToAction("Dashboard", "Participant");
+    }
+    //  LOGOUT
+    public IActionResult Logout()
+    {
+        HttpContext.Session.Clear();
+        return RedirectToAction("Login");
     }
 }

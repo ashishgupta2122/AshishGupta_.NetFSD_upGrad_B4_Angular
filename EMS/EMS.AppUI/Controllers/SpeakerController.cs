@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using EMS.DAL.Models;
 using EMS.DAL.Repository;
+using System;
+using System.Linq;
 
 namespace EMS.AppUI.Controllers
 {
@@ -13,43 +15,45 @@ namespace EMS.AppUI.Controllers
             _repo = repo;
         }
 
-        // 🔹 COMMON SESSION CHECK
+        // 🔒 LOGIN CHECK
         private bool IsLoggedIn()
         {
             return HttpContext.Session.GetString("UserEmail") != null;
         }
 
-        // 🔹 INDEX
+        // 🔒 ADMIN CHECK
+        private bool IsAdmin()
+        {
+            return HttpContext.Session.GetString("Role") == "Admin";
+        }
+
+        // ================= INDEX (ALL USERS) =================
         public IActionResult Index()
         {
             if (!IsLoggedIn())
                 return RedirectToAction("Login", "Account");
 
             var data = _repo.GetAll()?.ToList() ?? new List<SpeakersDetails>();
-            return View(data);
+            return View(data);   // 🔥 LIST SHOW
         }
 
-        // 🔹 CREATE GET
+        // ================= CREATE (ADMIN ONLY) =================
         public IActionResult Create()
         {
-            if (!IsLoggedIn())
+            if (!IsAdmin())
                 return RedirectToAction("Login", "Account");
 
             return View();
         }
 
-        // 🔹 CREATE POST
         [HttpPost]
         public IActionResult Create(SpeakersDetails model)
         {
-            if (!IsLoggedIn())
+            if (!IsAdmin())
                 return RedirectToAction("Login", "Account");
 
-            if (string.IsNullOrEmpty(model.SpeakerName))
-            {
-                ModelState.AddModelError("", "Speaker Name is required");
+            if (!ModelState.IsValid)
                 return View(model);
-            }
 
             model.SpeakerId = Guid.NewGuid();
 
@@ -59,10 +63,10 @@ namespace EMS.AppUI.Controllers
             return RedirectToAction("Index");
         }
 
-        // 🔹 DELETE
+        // ================= DELETE (ADMIN ONLY) =================
         public IActionResult Delete(Guid id)
         {
-            if (!IsLoggedIn())
+            if (!IsAdmin())
                 return RedirectToAction("Login", "Account");
 
             if (id == Guid.Empty)

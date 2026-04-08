@@ -1,0 +1,35 @@
+@model EMS.DAL.Models.EventDetails
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+
+            <div class="card shadow-lg p-4" style="border-radius:20px;">
+                <h3 class="text-center mb-4">➕ Create Event</h3>
+
+                <form method="post">
+
+                    <div class="mb-3">
+                        <input asp-for="EventName" class="form-control" placeholder="Event Name" />
+                    </div>
+
+                    <div class="mb-3">
+                        <input asp-for="EventCategory" class="form-control" placeholder="Category" />
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea asp-for="Description" class="form-control" placeholder="Description"></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <input asp-for="EventDate" type="date" class="form-control" />
+                    </div>
+
+                    <button class="btn btn-primary w-100">Create Event</button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

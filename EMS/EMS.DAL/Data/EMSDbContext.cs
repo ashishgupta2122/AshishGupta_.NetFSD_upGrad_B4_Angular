@@ -9,31 +9,31 @@ namespace EMS.DAL.Data
         {
         }
 
-        public DbSet<UserInfo> Users
+        public DbSet<UserInfo> UserInfos
         {
             get;
             set;
         }
 
-        public DbSet<EventDetails> Events
+        public DbSet<EventDetails> EventDetails
         {
             get;
             set;
         }
 
-        public DbSet<SpeakersDetails> Speakers
+        public DbSet<SpeakersDetails> SpeakersDetails
         {
             get;
             set;
         }
 
-        public DbSet<SessionInfo> Sessions
+        public DbSet<SessionInfo> SessionInfos
         {
             get;
             set;
         }
 
-        public DbSet<ParticipantEventDetails> ParticipantEvents
+        public DbSet<ParticipantEventDetails> ParticipantEventDetails
         {
             get;
             set;

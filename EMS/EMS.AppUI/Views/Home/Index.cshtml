@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<EMS.DAL.Models.EventDetails>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -14,6 +16,7 @@
     .hero-section {
         min-height: 100vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -58,19 +61,21 @@
         opacity: 0.9;
     }
 
-    .features {
-        margin-top: 50px;
+    .event-section {
+        margin-top: 60px;
+        width: 100%;
     }
 
-    .feature-box {
+    .event-card {
         background: rgba(255, 255, 255, 0.1);
         border-radius: 15px;
         padding: 20px;
         backdrop-filter: blur(10px);
         transition: 0.3s;
+        height: 100%;
     }
 
-    .feature-box:hover {
+    .event-card:hover {
         transform: translateY(-5px);
     }
 
@@ -83,6 +88,7 @@
 
 <div class="hero-section">
 
+    <!-- HERO -->
     <div class="hero-content">
 
         <h1 class="hero-title">Event Management System</h1>
@@ -91,35 +97,43 @@
             Create, manage and organize your events, sessions, and speakers — all in one place.
         </p>
 
-        <!-- CTA Buttons -->
         <div class="mt-4">
             <a href="/Account/Login" class="btn btn-custom btn-primary-custom">Login</a>
             <a href="/Account/Register" class="btn btn-custom btn-outline-custom">Register</a>
         </div>
 
-        <!-- FEATURES -->
-        <div class="features row mt-5">
+    </div>
 
-            <div class="col-12 col-md-4 mb-3">
-                <div class="feature-box">
-                    <h5>📅 Events</h5>
-                    <p>Create and manage events easily</p>
-                </div>
-            </div>
+    <!-- 🔥 DYNAMIC EVENTS -->
+    <div class="container event-section">
 
-            <div class="col-12 col-md-4 mb-3">
-                <div class="feature-box">
-                    <h5>🎤 Sessions</h5>
-                    <p>Organize sessions efficiently</p>
-                </div>
-            </div>
+        <h2 class="text-center mb-4">📅 Available Events</h2>
 
-            <div class="col-12 col-md-4 mb-3">
-                <div class="feature-box">
-                    <h5>🧑‍🏫 Speakers</h5>
-                    <p>Manage speaker profiles</p>
-                </div>
-            </div>
+        <div class="row">
+
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                    <div class="col-md-4 mb-3">
+                        <div class="event-card shadow">
+
+                            <h5>@item.EventName</h5>
+                            <p>@item.EventCategory</p>
+                            <p>@item.Description</p>
+
+                            <a href="/Home/EventDetails/@item.EventId" class="btn btn-light w-100">
+                                View Details
+                            </a>
+
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-center">No active events available</p>
+            }
 
         </div>
 

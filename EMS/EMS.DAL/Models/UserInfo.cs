@@ -23,7 +23,7 @@ namespace EMS.DAL.Models
         {
             get;
             set;
-        }
+        } = "Participant";
 
         [Required, StringLength(20, MinimumLength = 6)]
         public string Password

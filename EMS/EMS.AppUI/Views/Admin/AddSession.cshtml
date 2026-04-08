@@ -1,0 +1,85 @@
+@model EMS.DAL.Models.SessionInfo
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+
+            <div class="card shadow-lg p-4" style="border-radius:20px;">
+                <h3 class="text-center mb-4">📅 Add Session</h3>
+
+                <form method="post">
+
+                    <!--  Validation Summary -->
+                    <div asp-validation-summary="All" class="text-danger mb-2"></div>
+
+                    <!-- Event Dropdown -->
+                    <div class="mb-3">
+                        <select asp-for="EventId" class="form-control">
+                            <option value="">Select Event</option>
+                            @foreach (var e in ViewBag.Events)
+                            {
+                                <option value="@e.EventId">@e.EventName</option>
+                            }
+                        </select>
+                        <span asp-validation-for="EventId" class="text-danger"></span>
+                    </div>
+
+                    <!-- Speaker Dropdown -->
+                    <div class="mb-3">
+                        <select asp-for="SpeakerId" class="form-control">
+                            <option value="">Select Speaker</option>
+                            @foreach (var s in ViewBag.Speakers)
+                            {
+                                <option value="@s.SpeakerId">@s.SpeakerName</option>
+                            }
+                        </select>
+                        <span asp-validation-for="SpeakerId" class="text-danger"></span>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="mb-3">
+                        <input asp-for="SessionTitle" class="form-control" placeholder="Session Title" />
+                        <span asp-validation-for="SessionTitle" class="text-danger"></span>
+                    </div>
+
+                    <!-- Start -->
+                    <div class="mb-3">
+                        <input asp-for="SessionStart" type="datetime-local" class="form-control" />
+                        <span asp-validation-for="SessionStart" class="text-danger"></span>
+                    </div>
+
+                    <!-- End -->
+                    <div class="mb-3">
+                        <input asp-for="SessionEnd" type="datetime-local" class="form-control" />
+                        <span asp-validation-for="SessionEnd" class="text-danger"></span>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-3">
+                        <textarea asp-for="Description" class="form-control" placeholder="Description"></textarea>
+                    </div>
+
+                    <!-- 🔥 NEW: Session URL -->
+                    <div class="mb-3">
+                        <input asp-for="SessionUrl" class="form-control"
+                               placeholder="Session URL (Zoom / Google Meet link)" />
+                        <span asp-validation-for="SessionUrl" class="text-danger"></span>
+                    </div>
+
+                    <!-- Submit -->
+                    <button class="btn btn-warning w-100">
+                        Add Session
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -9,7 +9,7 @@ namespace EMS.DAL.Models
         {
             get;
             set;
-        }
+        } = Guid.NewGuid();
 
         [Required, StringLength(50)]
         public string EventName
@@ -42,6 +42,6 @@ namespace EMS.DAL.Models
         {
             get;
             set;
-        }
+        } = "Draft";
     }
 }

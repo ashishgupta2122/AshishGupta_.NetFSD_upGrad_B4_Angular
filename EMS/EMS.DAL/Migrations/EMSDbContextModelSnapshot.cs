@@ -50,7 +50,7 @@ namespace EMS.DAL.Migrations
 
                     b.HasKey("EventId");
 
-                    b.ToTable("Events");
+                    b.ToTable("EventDetails");
                 });
 
             modelBuilder.Entity("EMS.DAL.Models.ParticipantEventDetails", b =>
@@ -71,7 +71,7 @@ namespace EMS.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ParticipantEvents");
+                    b.ToTable("ParticipantEventDetails");
                 });
 
             modelBuilder.Entity("EMS.DAL.Models.SessionInfo", b =>
@@ -81,7 +81,6 @@ namespace EMS.DAL.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("EventId")
@@ -94,12 +93,9 @@ namespace EMS.DAL.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("SessionTitle")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SessionUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("SpeakerId")
@@ -111,7 +107,7 @@ namespace EMS.DAL.Migrations
 
                     b.HasIndex("SpeakerId");
 
-                    b.ToTable("Sessions");
+                    b.ToTable("SessionInfos");
                 });
 
             modelBuilder.Entity("EMS.DAL.Models.SpeakersDetails", b =>
@@ -122,12 +118,14 @@ namespace EMS.DAL.Migrations
 
                     b.Property<string>("SpeakerName")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Topic")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("SpeakerId");
 
-                    b.ToTable("Speakers");
+                    b.ToTable("SpeakersDetails");
                 });
 
             modelBuilder.Entity("EMS.DAL.Models.UserInfo", b =>
@@ -151,7 +149,7 @@ namespace EMS.DAL.Migrations
 
                     b.HasKey("EmailId");
 
-                    b.ToTable("Users");
+                    b.ToTable("UserInfos");
                 });
 
             modelBuilder.Entity("EMS.DAL.Models.SessionInfo", b =>

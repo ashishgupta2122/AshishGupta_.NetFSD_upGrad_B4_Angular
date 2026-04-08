@@ -1,115 +1,48 @@
-@model EMS.DAL.Models.UserInfo
+@model EMS.AppUI.Models.LoginModel
 
 @{
     ViewData["Title"] = "Login";
 }
 
-<style>
-    body {
-        background: linear-gradient(135deg, #1e3c72, #2a5298);
-        min-height: 100vh;
-        font-family: 'Segoe UI', sans-serif;
-    }
-
-    .login-container {
-        min-height: 100vh;
-    }
-
-    .login-card {
-        border-radius: 20px;
-        backdrop-filter: blur(10px);
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-    }
-
-    .form-control {
-        border-radius: 10px;
-        padding: 10px;
-        background: rgba(255, 255, 255, 0.2);
-        border: none;
-        color: white;
-    }
-
-    .form-control::placeholder {
-        color: #ddd;
-    }
-
-    .form-control:focus {
-        box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-        background: rgba(255, 255, 255, 0.3);
-        color: white;
-    }
-
-    .btn-login {
-        border-radius: 10px;
-        background: #00c6ff;
-        background: linear-gradient(to right, #00c6ff, #0072ff);
-        border: none;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-
-    .btn-login:hover {
-        transform: scale(1.03);
-        opacity: 0.9;
-    }
-
-    .register-link a {
-        color: #00c6ff;
-        text-decoration: none;
-    }
-
-    .register-link a:hover {
-        text-decoration: underline;
-    }
-
-    @@media (max-width: 768px) {
-        .login-card {
-            padding: 20px !important;
-        }
-    }
-</style>
-
-<div class="container d-flex justify-content-center align-items-center login-container">
+<div class="container d-flex justify-content-center align-items-center"
+     style="min-height:100vh; background:linear-gradient(135deg,#1e3c72,#2a5298);">
 
     <div class="col-11 col-sm-9 col-md-6 col-lg-4">
 
-        <div class="card login-card shadow-lg p-4">
+        <div class="card p-4 shadow-lg" style="border-radius:20px; background:rgba(255,255,255,0.1); color:white;">
 
-            <h3 class="text-center mb-4 fw-bold">🔐 Admin Login</h3>
+            <h3 class="text-center mb-4">🔐 Login</h3>
 
-            <form method="post">
+            <form asp-action="Login" method="post">
 
                 <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input asp-for="EmailId" class="form-control" placeholder="Enter email" required />
+                    <input asp-for="Email" class="form-control" placeholder="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Password</label>
-                    <input asp-for="Password" type="password" class="form-control" placeholder="Enter password"
-                           required />
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
 
-                <button class="btn btn-login w-100 py-2">
-                    Login
-                </button>
+                <button type="submit" class="btn btn-primary w-100">Login</button>
 
-                <p class="text-danger text-center mt-3">
-                    @ViewBag.Error
-                </p>
+                <p class="text-danger text-center mt-2">@ViewBag.Error</p>
 
             </form>
 
-            <p class="text-center mt-3 register-link">
+            <p class="text-center mt-3">
                 Don't have an account?
-                <a href="/Account/Register" class="fw-bold">
-                    Register
-                </a>
+                <a asp-action="Register" asp-controller="Account">Register</a>
             </p>
 
         </div>
 
     </div>
-
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
