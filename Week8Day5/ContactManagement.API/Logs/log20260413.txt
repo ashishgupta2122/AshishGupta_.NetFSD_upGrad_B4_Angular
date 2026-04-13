@@ -1,0 +1,45 @@
+2026-04-13 22:17:19.584 +05:30 [INF] Now listening on: http://localhost:5217
+2026-04-13 22:17:19.734 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-13 22:17:19.740 +05:30 [INF] Hosting environment: Development
+2026-04-13 22:17:19.760 +05:30 [INF] Content root path: D:\Tranning\DayActivity\Week8Day5\ContactManagement.API
+2026-04-13 22:17:37.696 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5217/ - null null
+2026-04-13 22:17:37.943 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5217/ - 404 0 null 248.9076ms
+2026-04-13 22:17:38.023 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5217/, Response status code: 404
+2026-04-13 22:17:40.317 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5217/ - null null
+2026-04-13 22:17:40.377 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5217/ - 404 0 null 65.6939ms
+2026-04-13 22:17:40.626 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5217/, Response status code: 404
+2026-04-13 22:18:30.517 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5217/swagger - null null
+2026-04-13 22:18:30.565 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5217/swagger - 301 0 null 47.8489ms
+2026-04-13 22:18:30.619 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5217/swagger/index.html - null null
+2026-04-13 22:18:30.813 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5217/swagger/index.html - 200 null text/html;charset=utf-8 194.6601ms
+2026-04-13 22:18:30.920 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5217/swagger/index.css - null null
+2026-04-13 22:18:30.952 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5217/swagger/swagger-ui-standalone-preset.js - null null
+2026-04-13 22:18:30.952 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5217/swagger/swagger-ui-bundle.js - null null
+2026-04-13 22:18:30.973 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5217/swagger/swagger-ui.css - null null
+2026-04-13 22:18:31.033 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5217/swagger/index.css - 200 152 text/css 113.3957ms
+2026-04-13 22:18:31.044 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5217/swagger/swagger-ui.css - 200 26479 text/css 71.0762ms
+2026-04-13 22:18:31.053 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5217/swagger/index.js - null null
+2026-04-13 22:18:31.112 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5217/swagger/swagger-ui-standalone-preset.js - 200 76613 text/javascript 159.5153ms
+2026-04-13 22:18:31.114 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5217/swagger/swagger-ui-bundle.js - 200 418181 text/javascript 161.2497ms
+2026-04-13 22:18:31.253 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5217/swagger/index.js - 200 null application/javascript;charset=utf-8 199.8976ms
+2026-04-13 22:18:31.497 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5217/swagger/favicon-32x32.png - null null
+2026-04-13 22:18:31.600 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5217/swagger/v1/swagger.json - null null
+2026-04-13 22:18:31.715 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5217/swagger/favicon-32x32.png - 200 628 image/png 218.1814ms
+2026-04-13 22:18:32.301 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5217/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 700.447ms
+2026-04-13 22:18:48.603 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5217/api/Contact - null 0
+2026-04-13 22:18:48.635 +05:30 [INF] Executing endpoint 'ContactManagement.API.Controllers.ContactController.CreateContact (ContactManagement.API)'
+2026-04-13 22:18:48.676 +05:30 [INF] Route matched with {action = "CreateContact", controller = "Contact"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateContact() on controller ContactManagement.API.Controllers.ContactController (ContactManagement.API).
+2026-04-13 22:18:48.682 +05:30 [INF] Creating contact...
+2026-04-13 22:18:48.696 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-04-13 22:18:48.729 +05:30 [INF] Executed action ContactManagement.API.Controllers.ContactController.CreateContact (ContactManagement.API) in 29.5319ms
+2026-04-13 22:18:48.731 +05:30 [INF] Executed endpoint 'ContactManagement.API.Controllers.ContactController.CreateContact (ContactManagement.API)'
+2026-04-13 22:18:48.733 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5217/api/Contact - 200 null text/plain; charset=utf-8 130.4319ms
+2026-04-13 22:18:50.826 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5217/api/Contact - null 0
+2026-04-13 22:18:50.832 +05:30 [INF] Executing endpoint 'ContactManagement.API.Controllers.ContactController.CreateContact (ContactManagement.API)'
+2026-04-13 22:18:50.842 +05:30 [INF] Route matched with {action = "CreateContact", controller = "Contact"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateContact() on controller ContactManagement.API.Controllers.ContactController (ContactManagement.API).
+2026-04-13 22:18:50.851 +05:30 [INF] Creating contact...
+2026-04-13 22:18:50.858 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-04-13 22:18:50.865 +05:30 [INF] Executed action ContactManagement.API.Controllers.ContactController.CreateContact (ContactManagement.API) in 14.191ms
+2026-04-13 22:18:50.883 +05:30 [INF] Executed endpoint 'ContactManagement.API.Controllers.ContactController.CreateContact (ContactManagement.API)'
+2026-04-13 22:18:50.893 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5217/api/Contact - 200 null text/plain; charset=utf-8 66.8766ms
+2026-04-13 22:22:38.830 +05:30 [INF] Application is shutting down...

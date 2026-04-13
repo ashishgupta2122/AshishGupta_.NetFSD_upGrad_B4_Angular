@@ -1,0 +1,15 @@
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\bin\Debug\net10.0\ContactManagement.DAL.deps.json
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\bin\Debug\net10.0\ContactManagement.DAL.runtimeconfig.json
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\bin\Debug\net10.0\ContactManagement.DAL.dll
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\bin\Debug\net10.0\ContactManagement.DAL.pdb
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\obj\Debug\net10.0\ContactManagement.DAL.csproj.AssemblyReference.cache
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\obj\Debug\net10.0\ContactManagement.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\obj\Debug\net10.0\ContactManagement.DAL.AssemblyInfoInputs.cache
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\obj\Debug\net10.0\ContactManagement.DAL.AssemblyInfo.cs
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\obj\Debug\net10.0\ContactManagement.DAL.csproj.CoreCompileInputs.cache
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\obj\Debug\net10.0\ContactManagement.DAL.sourcelink.json
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\obj\Debug\net10.0\ContactManagement.DAL.dll
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\obj\Debug\net10.0\refint\ContactManagement.DAL.dll
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\obj\Debug\net10.0\ContactManagement.DAL.pdb
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\obj\Debug\net10.0\ContactManagement.DAL.genruntimeconfig.cache
+D:\Tranning\DayActivity\Week8Day4\ContactManagementSystem\ContactManagement.DAL\obj\Debug\net10.0\ref\ContactManagement.DAL.dll
