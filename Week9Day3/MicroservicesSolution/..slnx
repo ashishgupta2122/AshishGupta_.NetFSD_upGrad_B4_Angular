@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ApiGateway/ApiGateway.csproj" />
+  <Project Path="CategoryService/CategoryService.csproj" />
+  <Project Path="ContactService/ContactService.csproj" />
+</Solution>
