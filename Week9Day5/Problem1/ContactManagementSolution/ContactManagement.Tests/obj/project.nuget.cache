@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "5rpPPTmzBLw=",
+  "success": true,
+  "projectFilePath": "D:\\Tranning\\DayActivity\\Week9Day5\\Problem1\\ContactManagementSolution\\ContactManagement.Tests\\ContactManagement.Tests.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\coverlet.collector\\6.0.4\\coverlet.collector.6.0.4.nupkg.sha512",
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\microsoft.codecoverage\\18.4.0\\microsoft.codecoverage.18.4.0.nupkg.sha512",
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\microsoft.net.test.sdk\\18.4.0\\microsoft.net.test.sdk.18.4.0.nupkg.sha512",
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\microsoft.testing.extensions.telemetry\\1.5.3\\microsoft.testing.extensions.telemetry.1.5.3.nupkg.sha512",
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\microsoft.testing.extensions.trxreport.abstractions\\1.5.3\\microsoft.testing.extensions.trxreport.abstractions.1.5.3.nupkg.sha512",
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\microsoft.testing.extensions.vstestbridge\\1.5.3\\microsoft.testing.extensions.vstestbridge.1.5.3.nupkg.sha512",
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\microsoft.testing.platform\\1.5.3\\microsoft.testing.platform.1.5.3.nupkg.sha512",
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\microsoft.testing.platform.msbuild\\1.5.3\\microsoft.testing.platform.msbuild.1.5.3.nupkg.sha512",
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\microsoft.testplatform.objectmodel\\18.4.0\\microsoft.testplatform.objectmodel.18.4.0.nupkg.sha512",
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\microsoft.testplatform.testhost\\18.4.0\\microsoft.testplatform.testhost.18.4.0.nupkg.sha512",
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\nunit\\4.5.1\\nunit.4.5.1.nupkg.sha512",
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\nunit.analyzers\\4.7.0\\nunit.analyzers.4.7.0.nupkg.sha512",
+    "C:\\Users\\Ashish Gupta\\.nuget\\packages\\nunit3testadapter\\5.0.0\\nunit3testadapter.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
