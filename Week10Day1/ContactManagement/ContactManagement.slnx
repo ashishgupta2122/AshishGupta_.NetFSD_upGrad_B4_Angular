@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ContactManagement.ConsoleApp/ContactManagement.ConsoleApp.csproj" />
+  <Project Path="ContactManagement.Core/ContactManagement.Core.csproj" />
+  <Project Path="ContactManagement.Infrastructure/ContactManagement.Infrastructure.csproj" />
+</Solution>

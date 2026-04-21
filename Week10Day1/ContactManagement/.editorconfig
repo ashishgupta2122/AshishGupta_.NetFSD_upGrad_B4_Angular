@@ -1,0 +1,13 @@
+root = true;
+
+[*.cs]
+#Naming Rules
+dotnet_naming_rule.private_fields_should_be_camel_case.severity = warning
+
+#code Quality
+dotnet_diagnostic.CA1822.severity = warning
+dotnet_diagnostic.CA2000.severity = warning
+
+#Code Style
+dotnet_prefer_braces = true:suggestion
+csharp_style_var_for_built_in_types = true:suggestion

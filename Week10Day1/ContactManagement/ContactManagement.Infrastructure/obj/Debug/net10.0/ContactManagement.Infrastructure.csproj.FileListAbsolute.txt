@@ -1,0 +1,16 @@
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\bin\Debug\net10.0\ContactManagement.Infrastructure.deps.json
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\bin\Debug\net10.0\ContactManagement.Infrastructure.dll
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\bin\Debug\net10.0\ContactManagement.Infrastructure.pdb
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\bin\Debug\net10.0\ContactManagement.Core.dll
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\bin\Debug\net10.0\ContactManagement.Core.pdb
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\obj\Debug\net10.0\ContactManagement.Infrastructure.csproj.AssemblyReference.cache
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\obj\Debug\net10.0\ContactManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\obj\Debug\net10.0\ContactManagement.Infrastructure.AssemblyInfoInputs.cache
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\obj\Debug\net10.0\ContactManagement.Infrastructure.AssemblyInfo.cs
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\obj\Debug\net10.0\ContactManagement.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\obj\Debug\net10.0\ContactManagement.Infrastructure.sourcelink.json
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\obj\Debug\net10.0\ContactM.A51720D7.Up2Date
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\obj\Debug\net10.0\ContactManagement.Infrastructure.dll
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\obj\Debug\net10.0\refint\ContactManagement.Infrastructure.dll
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\obj\Debug\net10.0\ContactManagement.Infrastructure.pdb
+D:\Tranning\DayActivity\Week10Day1\ContactManagement\ContactManagement.Infrastructure\obj\Debug\net10.0\ref\ContactManagement.Infrastructure.dll
