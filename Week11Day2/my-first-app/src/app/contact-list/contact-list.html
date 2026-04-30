@@ -1,0 +1,11 @@
+<h2>Contact List</h2>
+
+<div *ngIf="contacts.length === 0">No Contacts</div>
+
+<div class="card" *ngFor="let c of contacts">
+    <p><strong>{{ c.name }}</strong></p>
+    <p>{{ c.email }}</p>
+    <p>{{ c.phone }}</p>
+
+    <button [routerLink]="['/contact', c.id]">View</button>
+</div>

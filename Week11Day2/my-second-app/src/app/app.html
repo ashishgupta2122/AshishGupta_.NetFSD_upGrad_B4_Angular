@@ -1,0 +1,15 @@
+<h1>Contact Management</h1>
+
+<nav>
+  <a routerLink="/contacts">Contacts</a> |
+  <a routerLink="/add-contact">Add Contact</a>
+</nav>
+
+<br>
+
+<button *ngIf="!auth.isLoggedIn" (click)="login()">Login</button>
+<button *ngIf="auth.isLoggedIn" (click)="logout()">Logout</button>
+
+<hr>
+
+<router-outlet></router-outlet>
