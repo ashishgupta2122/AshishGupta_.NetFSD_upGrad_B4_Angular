@@ -1,0 +1,58 @@
+<div class="container">
+
+  <h1>Contact Form</h1>
+
+  <form #contactForm="ngForm" (ngSubmit)="addContact(contactForm)" class="form">
+
+    <div class="form-group">
+      <input type="text" name="name" placeholder="Enter Name" [(ngModel)]="contact.name" #name="ngModel" required>
+      <div *ngIf="name.invalid && name.touched" class="error">
+        Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="email" name="email" placeholder="Enter Email" [(ngModel)]="contact.email" #email="ngModel" required
+        email>
+      <div *ngIf="email.invalid && email.touched" class="error">
+        Valid Email required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="text" name="phone" placeholder="Enter Phone" [(ngModel)]="contact.phone" #phone="ngModel" required
+        minlength="10">
+      <div *ngIf="phone.invalid && phone.touched" class="error">
+        Phone must be at least 10 digits
+      </div>
+    </div>
+
+    <div class="form-group checkbox">
+      <label>
+        <input type="checkbox" name="isActive" [(ngModel)]="contact.isActive">
+        Active
+      </label>
+    </div>
+
+    <button type="submit">Add Contact</button>
+
+  </form>
+
+  <hr>
+
+  <h2>Contact List</h2>
+
+  <div *ngIf="contacts.length === 0" class="no-data">
+    No Contacts Available
+  </div>
+
+  <div class="card" *ngFor="let c of contacts">
+    <p><strong>{{ c.name }}</strong></p>
+    <p>{{ c.email }}</p>
+    <p>{{ c.phone }}</p>
+    <p [ngStyle]="{color: c.isActive ? 'green' : 'red'}">
+      {{ c.isActive ? 'Active' : 'Inactive' }}
+    </p>
+  </div>
+
+</div>

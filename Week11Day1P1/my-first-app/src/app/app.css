@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+.active-contact {
+    background-color: #e6ffe6;;
+}
+
+.inactive-contact {
+    background-color: #ffe6e6;
+}
+
+tr:hover {
+  background-color: #ddd;
+}

@@ -1,0 +1,76 @@
+/* Container */
+.container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input */
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Checkbox */
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+/* Button */
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Error */
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+/* Cards */
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* No Data */
+.no-data {
+  color: gray;
+}
+
+/* 🔥 Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  input {
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}

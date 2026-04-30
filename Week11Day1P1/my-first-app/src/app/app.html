@@ -1,0 +1,39 @@
+<h1>Contact Management</h1>
+
+<!-- No Data -->
+<div *ngIf="contacts.length === 0">
+  No Contacts Available
+</div>
+
+<!-- Table -->
+<table *ngIf="contacts.length > 0" border="1">
+
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Status</th>
+  </tr>
+
+  <tr *ngFor="let contact of contacts" [ngClass]="contact.isActive ? 'active-contact' : 'inactive-contact'"
+    [ngStyle]="{'color': contact.isActive ? 'green' : 'red'}">
+
+    <td>{{ contact.contactId }}</td>
+    <td>{{ contact.name }}</td>
+    <td>{{ contact.email }}</td>
+    <td>{{ contact.phone }}</td>
+
+    <td>
+      <span *ngIf="contact.isActive; else inactiveBlock">
+        Active Contact
+      </span>
+
+      <ng-template #inactiveBlock>
+        Inactive Contact
+      </ng-template>
+    </td>
+
+  </tr>
+
+</table>
